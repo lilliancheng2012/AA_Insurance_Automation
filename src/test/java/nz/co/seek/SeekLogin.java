@@ -31,7 +31,7 @@ public class SeekLogin {
     driver.findElement(By.id("Email")).clear();
     driver.findElement(By.id("Email")).sendKeys("lillian.cheng2012@gmail.com");
     driver.findElement(By.id("Password")).clear();
-    driver.findElement(By.id("Password")).sendKeys("woshibendan1bendan");
+    driver.findElement(By.id("Password")).sendKeys("***");
     driver.findElement(By.cssSelector("button.mod-button.state-button-primary")).click();
   }
 
