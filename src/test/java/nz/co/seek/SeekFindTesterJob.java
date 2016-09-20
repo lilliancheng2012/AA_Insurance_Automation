@@ -1,9 +1,9 @@
 package nz.co.seek;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import java.util.concurrent.TimeUnit;
-import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -12,9 +12,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class SeekLogin {
+public class SeekFindTesterJob {
   private WebDriver driver;
   private String baseUrl;
+  //private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @Before
@@ -26,7 +27,7 @@ public class SeekLogin {
   }
 
   @Test
-  public void testSeekLogin() throws Exception {
+  public void test1() throws Exception {
     driver.get(baseUrl + "/");
     driver.findElement(By.linkText("Sign in")).click();
     driver.findElement(By.id("Email")).clear();
@@ -35,9 +36,13 @@ public class SeekLogin {
     driver.findElement(By.id("Password")).sendKeys("Password");
     driver.findElement(By.cssSelector("button.mod-button.state-button-primary")).click();
     
-    driver.findElement(By.cssSelector("span.username")).click();
-    driver.findElement(By.id("AvatarEditProfileLink")).click();
-    assertEquals("Lillian Cheng", driver.findElement(By.xpath("//div[@id='profileContainer']/div/div[2]/div/div/div/div/div/h1")).getText());
+    driver.findElement(By.id("keywords")).clear();
+    driver.findElement(By.id("keywords")).sendKeys("tester");
+    driver.findElement(By.cssSelector("button.seek-button--primary")).click();
+    assertEquals("tester", driver.findElement(By.cssSelector("span.active-filter-keywords")).getText());
+    
+    driver.findElement(By.linkText("Save search")).click();
+    assertEquals("Search saved. New jobs for tester in New Zealand will be emailed daily.\nEdit saved searches in My Activity.", driver.findElement(By.cssSelector("div.confirmation > span")).getText());
   }
 
   @After
@@ -48,4 +53,5 @@ public class SeekLogin {
       fail(verificationErrorString);
     }
   }
+
 }
