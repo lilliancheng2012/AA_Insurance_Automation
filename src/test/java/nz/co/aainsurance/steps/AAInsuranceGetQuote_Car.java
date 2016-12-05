@@ -39,7 +39,7 @@ public class AAInsuranceGetQuote_Car {
 		System.setProperty("webdriver.chrome.driver", "D:/Dev/chromedriver_win32/chromedriver.exe");
 		driver = new ChromeDriver();
 		baseUrl = "https://www.aainsurance.co.nz/";
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.get(baseUrl);
 	}

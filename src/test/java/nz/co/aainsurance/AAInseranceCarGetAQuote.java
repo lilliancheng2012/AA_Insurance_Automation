@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.Select;
 /**
  * The Class AAInserance_Car_GetAQuote.
  */
-public class AAInserance_Car_GetAQuote {
+public class AAInseranceCarGetAQuote {
 
 	/** The driver. */
 	private WebDriver driver;
