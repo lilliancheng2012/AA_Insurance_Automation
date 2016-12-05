@@ -53,7 +53,7 @@ public class AAInserance_Car_GetAQuote {
 
 		Set<String> windowId = driver.getWindowHandles();
 		Iterator<String> itererator = windowId.iterator();
-		String mainWinID = itererator.next();
+		itererator.next();
 		String newAdwinID = itererator.next();
 		driver.switchTo().window(newAdwinID);
 
@@ -65,10 +65,7 @@ public class AAInserance_Car_GetAQuote {
 		// Choose 'No', I am not an AA member.
 		driver.findElement(By.xpath("//span[contains(.,'No')]")).click();
 
-		// new Select(driver.findElement(By.id("vehicleYearOfManufactureList"))).selectByVisibleText("2004");
 		driver.findElement(By.cssSelector("#vehicleYearOfManufactureList > option[value=\"2004\"]")).click();
-		// driver.findElement(By.xpath("//option[contains(@value,'2004')]")).click();
-		// driver.findElement(By.xpath("//option[@value='2004']")).click();
 		Thread.sleep(1000);
 		// new Select(driver.findElement(By.id("vehicleMakeList"))).selectByVisibleText("Nissan");
 		driver.findElement(By.cssSelector("option[value=\"NISSAN\"]")).click();
@@ -94,13 +91,9 @@ public class AAInserance_Car_GetAQuote {
 		// test Car Details
 		assertEquals(driver.findElement(By.cssSelector("#car-details-aainz > span.sg-Progress-text")).getText(),"Car Details");
 		
-//		driver.findElement(By.id("vehicleFinance.financed2")).click();
 		driver.findElement(By.xpath("//div[@id='vehicleFinance.financedButtons']/label[2]/span")).click();
 		Thread.sleep(1000);
 		
-//		driver.findElement(By.id("vehicleUse.vehiclePrimaryUse1")).click();
-//		driver.findElement(By.cssSelector("label.size-small > span")).click();
-//		driver.findElement(By.id("ui-id-3")).click();
 		driver.findElement(By.xpath("//span[contains(.,'Private')]")).click();
 		Thread.sleep(1000);
 		
@@ -119,11 +112,9 @@ public class AAInserance_Car_GetAQuote {
 		//Main driver's date of birth
 		driver.findElement(By.id("mainDriver.dateOfBirth")).sendKeys("18-10-1989");
 		
-//		driver.findElement(By.id("mainDriver.driverGender2")).click();
 	    driver.findElement(By.xpath("//div[@id='mainDriver.driverGenderButtons']/label[2]/span")).click();
 	    Thread.sleep(1000);
 	    
-//	    driver.findElement(By.id("existingPolicies2")).click();
 	    driver.findElement(By.xpath("//div[@id='existingPoliciesButtons']/label[2]/span")).click();
 	    Thread.sleep(1000);
 	    
@@ -131,9 +122,7 @@ public class AAInserance_Car_GetAQuote {
 	    driver.findElement(By.cssSelector("option[value=\"AA\"]")).click();
 	    Thread.sleep(1000);
 	    
-//	    driver.findElement(By.id("mainDriverNumberOfAccidentsOccurrences1")).click();
 	    driver.findElement(By.cssSelector("#mainDriverNumberOfAccidentsOccurrencesButtons > label > span")).click();
-//	    driver.findElement(By.id("numberOfAdditionalDrivers1")).click(); 
 	    driver.findElement(By.cssSelector("#numberOfAdditionalDriversButtons > label > span")).click();
 	    driver.findElement(By.id("_eventId_submit")).click();
 	    

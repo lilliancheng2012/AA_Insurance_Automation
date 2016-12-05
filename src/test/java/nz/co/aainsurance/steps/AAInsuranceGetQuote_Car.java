@@ -55,7 +55,7 @@ public class AAInsuranceGetQuote_Car {
 
 		Set<String> windowId = driver.getWindowHandles();
 		Iterator<String> itererator = windowId.iterator();
-		String mainWinID = itererator.next();
+		itererator.next();
 		String newAdwinID = itererator.next();
 		driver.switchTo().window(newAdwinID);
 
