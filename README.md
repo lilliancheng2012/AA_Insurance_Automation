@@ -36,12 +36,7 @@ This project provides Backend APIs for properties rental websites , IOS and Andr
 2. Create Step definitions for the AAInsuranceGetQuoteCar.feature
 ![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition1.PNG)
 ![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition2.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition3.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition4.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition5.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition6.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition7.PNG)
-![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/StepDefinition8.PNG)
+
 
 ### Add Cucumber report plugin in pom.xml
 
@@ -78,3 +73,4 @@ After run completed, check the status and results.
 
 The Cucumber report plugin will generated the report after executing the test cases, go to Project folder, check report under `\target\cucumber-html-reports\cucumber-html-reports`
 
+![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/report.PNG)
