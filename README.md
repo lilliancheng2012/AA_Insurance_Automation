@@ -67,7 +67,7 @@ This project provides Backend APIs for properties rental websites , IOS and Andr
 	</plugin>
 
 ### Run Test Cases
-Run `mvn clean test` to execute test cases.
+Run `mvn clean install` to execute test cases.
 
 ![](https://raw.githubusercontent.com/lilliancheng2012/lilliancheng2012.github.io/master/public/img/posts/06-12-16/MvnCleanTest.jpg)
 
