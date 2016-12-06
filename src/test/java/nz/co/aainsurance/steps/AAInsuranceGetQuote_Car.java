@@ -30,7 +30,7 @@ public class AAInsuranceGetQuote_Car {
 	private String baseUrl;
 
 	/**
-	 * I go to A A insurance website.
+	 * I go to AA insurance website.
 	 *
 	 * @throws Throwable the throwable
 	 */
@@ -87,7 +87,7 @@ public class AAInsuranceGetQuote_Car {
 	}
 
 	/**
-	 * I am not an A A insurance member.
+	 * I am not an AA insurance member.
 	 *
 	 * @throws Throwable the throwable
 	 */
@@ -95,6 +95,25 @@ public class AAInsuranceGetQuote_Car {
 	public void i_am_not_an_AA_insurance_member() throws Throwable {
 		// Choose 'No', I am not an AA member.
 		driver.findElement(By.xpath("//span[contains(.,'No')]")).click();
+	}
+
+	/**
+	 * I am A A insurance member.
+	 *
+	 * @throws Throwable the throwable
+	 */
+	@Given("^I am AA insurance member$")
+	public void i_am_AA_insurance_member() throws Throwable {
+		// Choose 'Yes', I am AA insurance member.
+		driver.findElement(By.xpath("//span[contains(.,'Yes')]")).click();;
+		Thread.sleep(2000);
+		
+		//input your AA Membership number and join date
+	    driver.findElement(By.xpath("//input[@id='aaMembershipDetails.aaMembershipNumber']")).clear();
+	    driver.findElement(By.xpath("//input[@id='aaMembershipDetails.aaMembershipNumber']")).sendKeys("key in valid Membership No.");;
+	    Thread.sleep(1000);
+	    new Select(driver.findElement(By.xpath("//select[@id='aaMembershipDetails.joinedMonth']"))).selectByVisibleText("January");
+	    new Select(driver.findElement(By.xpath("//select[@id='aaMembershipDetails.joinedYear']"))).selectByVisibleText("2016");
 	}
 
 	/**
@@ -181,8 +200,16 @@ public class AAInsuranceGetQuote_Car {
 	 */
 	@Given("^I use my car as \"([^\"]*)\"$")
 	public void i_use_my_car_as(String arg1) throws Throwable {
+		
 		driver.findElement(By.xpath("//span[contains(.,'" + arg1 + "')]")).click();
 		Thread.sleep(1000);
+		
+	    if (arg1.equalsIgnoreCase("Private")) {
+	    	//if my car used as Private
+		} else {
+			//if my car used as Business
+		    new Select(driver.findElement(By.id("vehicleBusinessUseList"))).selectByVisibleText("Tradesperson");
+		}
 	}
 
 	/**
