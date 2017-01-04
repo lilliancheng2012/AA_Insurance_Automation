@@ -1,6 +1,6 @@
 # AA Insurance Automation
 
-This project provides Backend APIs for properties rental websites , IOS and Android devices.
+AA Insurance Automation test demo.
 
 ## Getting Started
 
